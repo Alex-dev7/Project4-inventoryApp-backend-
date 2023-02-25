@@ -10,4 +10,4 @@ class InventorySerializer(serializers.HyperlinkedModelSerializer):
         # the fields that should be included in the serialized output
         fields = ['id', 'name', 'quantity', 'department', 'image', 'details', 'location']
         
-    image = serializers.ImageField(max_length=None, use_url=True)
+    image = serializers.ImageField(max_length=None, use_url=True, required=False)

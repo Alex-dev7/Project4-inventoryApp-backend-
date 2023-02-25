@@ -36,7 +36,7 @@ class InventoryViewSet(viewsets.ModelViewSet):
         serializer.is_valid(raise_exception=True)
 
         
-        if 'image' in request.data == True:
+        if 'image' in request.data:
             image_public_id = instance.image.public_id
             try:
                 api.delete_resources([image_public_id])
