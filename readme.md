@@ -37,7 +37,7 @@ erDiagram
 |   Delete   | /inventory/:id |   DELETE  | Delete a specific item   |
 
 ### API
-[Deployed Backend Link](https://inventory-api-yh0c.onrender.com/)
+[Deployed Backend Link](https://inventory-api-92cp.onrender.com/inventory/)
 
 ### User Stories
 - As a user, I can see a json response of all the items when I visit the url + /inventory/  page
