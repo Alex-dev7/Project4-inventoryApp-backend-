@@ -24,9 +24,9 @@ class InventoryViewSet(viewsets.ModelViewSet):
             # Delete the image from Cloudinary
             api.delete_resources([image_public_id])
         except NotFound:
-            # Handle case when image is not found on Cloudinary
+            # Handle case when image is not found on cloudinary
             pass
-        self.perform_destroy(instance)
-        return Response(status=status.HTTP_204_NO_CONTENT)
+        self.perform_destroy(instance) # proced with deletion of the record form the database
+        return Response(status=status.HTTP_204_NO_CONTENT)  #  class that is used to return a response to an HTTP request
     
 
