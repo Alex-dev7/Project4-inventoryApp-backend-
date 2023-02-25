@@ -18,10 +18,10 @@ class InventoryViewSet(viewsets.ModelViewSet):
     
     def destroy(self, request, *args, **kwargs):
         instance = self.get_object()
-        # Retrieve the public_id of the image from the model instance
+        # Retrieve the public_id of the image 
         image_public_id = instance.image.public_id
         try:
-            # Delete the image from Cloudinary
+            # Delete the image from cloudinary
             api.delete_resources([image_public_id])
         except NotFound:
             # Handle case when image is not found on cloudinary
@@ -30,3 +30,22 @@ class InventoryViewSet(viewsets.ModelViewSet):
         return Response(status=status.HTTP_204_NO_CONTENT)  #  class that is used to return a response to an HTTP request
     
 
+    def update(self, request, *args, **kwargs):
+        instance = self.get_object()
+        serializer = self.get_serializer(instance, data=request.data, partial=kwargs.pop('partial', False))
+        serializer.is_valid(raise_exception=True)
+
+        
+        if 'image' in request.data == True:
+            image_public_id = instance.image.public_id
+            try:
+                api.delete_resources([image_public_id])
+            except NotFound:
+                pass
+
+            # Upload the new image to cloudinary and update the model instance with the new image URL
+            uploaded_image = upload(request.data['image'])
+            request.data['image'] = uploaded_image['secure_url']
+        
+        self.perform_update(serializer)
+        return Response(serializer.data)
