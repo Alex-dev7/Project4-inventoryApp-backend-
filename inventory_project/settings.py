@@ -16,6 +16,7 @@ import os
 import cloudinary
 import cloudinary.uploader
 import cloudinary.api
+import django_cockroachdb
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -50,7 +51,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'cloudinary',
     'cloudinary_storage',
-    'corsheaders'
+    'corsheaders',
+    'django_cockroachdb'
     
 ]
 
@@ -91,14 +93,36 @@ WSGI_APPLICATION = 'inventory_project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-DATABASES = {
-    'default': dj_database_url.config(
-        conn_max_age=600,
-        conn_health_checks=True,
-    ),
-}
+
+# DATABASES = {'default': dj_database_url.config(default=os.environ['DATABASE_URL'], engine='django_cockroachdb')}
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django_cockroachdb',
+#         'NAME': 'inventory',
+#         'USER': 'alexei',
+#         'PASSWORD': 'CfGmjC4c1gNSA_om2dbKsg',
+#         'HOST': 'waning-nymph-4768.g8z.cockroachlabs.cloud',
+#         'PORT': '26257',
+#         'OPTIONS': {
+#             'sslmode': 'verify-full'
+#         },
+#     },
+# }
 
 
+
+DATABASES =  {'default': dj_database_url.config(
+    default=os.environ['DATABASE_URL'],
+    engine='django_cockroachdb')
+             }
+
+# DATABASES = {
+#     'default': dj_database_url.config(
+#         conn_max_age=600,
+#         conn_health_checks=True,
+#     ),
+# }
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
 
@@ -153,3 +177,7 @@ cloudinary.config(
 )
 
 
+# CfGmjC4c1gNSA_om2dbKsg
+
+
+# export DATABASE_URL="postgresql://alexei:CfGmjC4c1gNSA_om2dbKsg@waning-nymph-4768.g8z.cockroachlabs.cloud:26257/defaultdb?sslmode=verify-full"
