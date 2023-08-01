@@ -20,6 +20,7 @@ class InventoryViewSet(viewsets.ModelViewSet):
         instance = self.get_object()
         # Retrieve the public_id of the image 
         image_public_id = instance.image.public_id
+        # print(image_public_id, "herreeeeeeeeeeee---------------------------------!!!!!!!!")
         try:
             # Delete the image from cloudinary
             api.delete_resources([image_public_id])

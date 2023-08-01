@@ -178,6 +178,6 @@ cloudinary.config(
 
 
 # CfGmjC4c1gNSA_om2dbKsg
-
-
-# export DATABASE_URL="postgresql://alexei:CfGmjC4c1gNSA_om2dbKsg@waning-nymph-4768.g8z.cockroachlabs.cloud:26257/defaultdb?sslmode=verify-full"
+# os.environ.get('CLOUDINARY_CLOUD_NAME')
+# os.environ.get('CLOUDINARY_API_KEY')
+# os.environ.get('CLOUDINARY_API_SECRET')

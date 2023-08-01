@@ -3,6 +3,7 @@ from cloudinary.models import CloudinaryField
 
 # Create your models here.
 class Inventory(models.Model):
+    id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=100)
     quantity = models.IntegerField()
     department = models.CharField(max_length=100)
