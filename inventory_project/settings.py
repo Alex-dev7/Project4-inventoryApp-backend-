@@ -177,7 +177,5 @@ cloudinary.config(
 )
 
 
-# CfGmjC4c1gNSA_om2dbKsg
-# os.environ.get('CLOUDINARY_CLOUD_NAME')
-# os.environ.get('CLOUDINARY_API_KEY')
-# os.environ.get('CLOUDINARY_API_SECRET')
+# 
+
