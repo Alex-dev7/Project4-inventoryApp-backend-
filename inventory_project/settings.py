@@ -90,10 +90,10 @@ TEMPLATES = [
 ]
 
 
-WSGI_APPLICATION = 'inventory_project.wsgi.app'
-# WSGI_APPLICATION = 'inventory_project.wsgi.application' # old render version
+# WSGI_APPLICATION = 'inventory_project.wsgi.app'
+WSGI_APPLICATION = 'inventory_project.wsgi.application' 
 
-
+# old render version
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
