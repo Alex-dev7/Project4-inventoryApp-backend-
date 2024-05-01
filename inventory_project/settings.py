@@ -69,7 +69,7 @@ INSTALLED_APPS = [
     'cloudinary_storage',
     'corsheaders',
     'django_cockroachdb',
-    'inventory_project'
+    'inventory'
 ]
 
 MIDDLEWARE = [
