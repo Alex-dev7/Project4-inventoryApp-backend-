@@ -32,8 +32,8 @@ SECRET_KEY = os.environ.get('SECRET_KEY', default='localkey2022v2')
 # DEBUG = 'RENDER' not in os.environ
 DEBUG = True
 
-
-ALLOWED_HOSTS = ['127.0.0.1', 'https://supply-smart.vercel.app']
+# '127.0.0.1', 'https://supply-smart.vercel.app' 'localhost'
+ALLOWED_HOSTS = ['.vercel.app']
 
 ## Handling Allowed Hosts on Render
 # RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
@@ -90,7 +90,7 @@ TEMPLATES = [
 ]
 
 
-WSGI_APPLICATION = 'api.wsgi.app'
+WSGI_APPLICATION = 'inventory_project.wsgi.app'
 # WSGI_APPLICATION = 'inventory_project.wsgi.application' # old render version
 
 
