@@ -105,7 +105,7 @@ TEMPLATES = [
 
 
 # WSGI_APPLICATION = 'inventory_project.wsgi.app'
-WSGI_APPLICATION = 'inventory_project.wsgi.application' 
+WSGI_APPLICATION = 'inventory_project.wsgi.app' 
 
 # old render version
 
