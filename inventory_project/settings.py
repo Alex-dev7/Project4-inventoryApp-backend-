@@ -30,10 +30,10 @@ SECRET_KEY = os.environ.get('SECRET_KEY', default='localkey2022v2')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = 'RENDER' not in os.environ
-DEBUG = "VERCEL" not in os.environ
+DEBUG = True
 
 # '127.0.0.1', 'https://supply-smart.vercel.app' 'localhost'
-ALLOWED_HOSTS = ['.vercel.app',  '.now.sh']
+ALLOWED_HOSTS = ['.vercel.app']
 
 ## Handling Allowed Hosts on Render
 # RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
