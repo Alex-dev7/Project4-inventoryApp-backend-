@@ -33,7 +33,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', default='localkey2022v2')
 DEBUG = "VERCEL" not in os.environ
 
 # '127.0.0.1', 'https://supply-smart.vercel.app' 'localhost'
-ALLOWED_HOSTS = ['.vercel.app']
+ALLOWED_HOSTS = ['.vercel.app',  '.now.sh']
 
 ## Handling Allowed Hosts on Render
 # RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
@@ -133,7 +133,7 @@ WSGI_APPLICATION = 'inventory_project.wsgi.app'
 
 DATABASES =  {'default': dj_database_url.config(
     default=os.environ['DATABASE_URL'],
-    engine='django_cockroachdb')
+    engine='django_cockroachdb',)
              }
 
 # DATABASES = {
@@ -177,6 +177,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = 'static/'
+# STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
+# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
