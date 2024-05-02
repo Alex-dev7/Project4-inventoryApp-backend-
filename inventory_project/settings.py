@@ -40,19 +40,7 @@ RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
 if RENDER_EXTERNAL_HOSTNAME:
     ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
 
-# {
-#     "builds": [{
-#         "src": "inventory_project/wsgi.py",
-#         "use": "@vercel/python",
-#         "config": { "maxLambdaSize": "15mb", "runtime": "python3.12" }
-#     }],
-#     "routes": [
-#         {
-#             "src": "/(.*)",
-#             "dest": "inventory_project/wsgi.py"
-#         }
-#     ]
-# }
+
 
 # Application definition
 
@@ -106,7 +94,6 @@ TEMPLATES = [
 # WSGI_APPLICATION = 'inventory_project.wsgi.app'
 WSGI_APPLICATION = 'inventory_project.wsgi.application'
 
-# old render version
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
@@ -155,8 +142,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = 'static/'
-# STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
-# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
