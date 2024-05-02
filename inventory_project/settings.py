@@ -68,8 +68,7 @@ INSTALLED_APPS = [
     'cloudinary',
     'cloudinary_storage',
     'corsheaders',
-    'django_cockroachdb',
-    'inventory'
+    'django_cockroachdb'
 ]
 
 MIDDLEWARE = [
@@ -113,22 +112,6 @@ WSGI_APPLICATION = 'inventory_project.wsgi.app'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 
-# DATABASES = {'default': dj_database_url.config(default=os.environ['DATABASE_URL'], engine='django_cockroachdb')}
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django_cockroachdb',
-#         'NAME': 'inventory',
-#         'USER': 'alexei',
-#         'PASSWORD': 'CfGmjC4c1gNSA_om2dbKsg',
-#         'HOST': 'waning-nymph-4768.g8z.cockroachlabs.cloud',
-#         'PORT': '26257',
-#         'OPTIONS': {
-#             'sslmode': 'verify-full'
-#         },
-#     },
-# }
-
 
 
 DATABASES =  {'default': dj_database_url.config(
@@ -136,12 +119,7 @@ DATABASES =  {'default': dj_database_url.config(
     engine='django_cockroachdb',)
              }
 
-# DATABASES = {
-#     'default': dj_database_url.config(
-#         conn_max_age=600,
-#         conn_health_checks=True,
-#     ),
-# }
+
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
 
