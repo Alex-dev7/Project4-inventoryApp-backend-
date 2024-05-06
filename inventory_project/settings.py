@@ -33,7 +33,7 @@ DEBUG = 'RENDER' not in os.environ
 
 
 # '127.0.0.1', 'https://supply-smart.vercel.app' 'localhost'
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.netlify.app']
 
 ## Handling Allowed Hosts on Render
 RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
